@@ -1,4 +1,5 @@
 import { Suspense, lazy, useRef } from 'react'
+import { SectionBadge } from '../components/SectionBadge'
 import { useGsapReveal } from '../hooks/useGsapReveal'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
@@ -31,13 +32,9 @@ export function SateShowcase() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div>
-            <div
-              data-sate-reveal
-              className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-4 py-2 text-[12px] font-semibold text-brand-dark ring-1 ring-black/5"
-            >
-              <span className="h-2 w-2 rounded-full bg-brand-green" />
+            <SectionBadge data-sate-reveal>
               Eficiencia energética
-            </div>
+            </SectionBadge>
             <h2
               data-sate-reveal
               className="mt-5 font-display text-[28px] font-semibold tracking-tight text-ink-900 sm:text-[34px]"
@@ -97,23 +94,14 @@ export function SateShowcase() {
                   </Suspense>
                 </div>
               ) : (
-                <div className="px-6 py-10">
-                  <div className="mx-auto max-w-sm">
-                    <div className="relative h-56 w-full">
-                      <div className="absolute inset-0 grid place-items-center">
-                        <div className="relative h-44 w-72">
-                          <div className="absolute inset-0 translate-x-3 translate-y-4 rounded-2xl bg-white shadow-soft ring-1 ring-black/10" />
-                          <div className="absolute inset-0 translate-x-2 translate-y-3 rounded-2xl bg-[#CFE8D6] shadow-soft ring-1 ring-black/10" />
-                          <div className="absolute inset-0 translate-x-1 translate-y-2 rounded-2xl bg-brand-green shadow-soft ring-1 ring-black/10" />
-                          <div className="absolute inset-0 translate-y-1 rounded-2xl bg-[#3B4654] shadow-soft ring-1 ring-black/10" />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-6 text-center text-[13px] leading-relaxed text-ink-600">
-                      Mostramos una versión estática para priorizar rendimiento.
-                    </div>
-                  </div>
+                <div className="bg-brand-light/30 p-4 sm:p-6">
+                  <img
+                    src="/SATE3d.png"
+                    alt="Esquema visual del sistema SATE por capas"
+                    className="h-auto w-full rounded-[22px] border border-black/10 bg-white object-contain shadow-soft"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               )}
 

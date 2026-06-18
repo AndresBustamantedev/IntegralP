@@ -1,5 +1,6 @@
 import { Clock3, MapPin, ShieldCheck, Users } from 'lucide-react'
 import { useRef } from 'react'
+import { SectionBadge } from '../components/SectionBadge'
 import { useGsapReveal } from '../hooks/useGsapReveal'
 
 const items = [
@@ -50,10 +51,9 @@ export function Benefits() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[12px] font-semibold text-brand-dark ring-1 ring-black/5">
-              <span className="h-2 w-2 rounded-full bg-brand-green" />
+            <SectionBadge>
               ¿Por qué elegirnos?
-            </div>
+            </SectionBadge>
             <h2 className="mt-5 font-display text-[28px] font-semibold tracking-tight text-ink-900 sm:text-[34px]">
               Tu proyecto, nuestra prioridad
             </h2>
@@ -71,12 +71,13 @@ export function Benefits() {
                 <article
                   key={it.title}
                   data-benefit
-                  className="rounded-[22px] border border-black/10 bg-white p-5 shadow-[0_18px_40px_-32px_rgba(16,24,40,0.45)] transition hover:-translate-y-1 hover:shadow-soft"
+                  className="group rounded-[22px] border border-black/10 bg-white p-5 shadow-[0_18px_40px_-32px_rgba(16,24,40,0.45)] transition hover:-translate-y-1 hover:border-black/15 hover:shadow-soft"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-soft ring-1 ring-black/5">
-                      <Icon className="h-5 w-5 text-brand-green" />
-                    </div>
+                  <div className="flex items-start gap-5">
+                    <Icon
+                      className="mt-0.5 h-10 w-10 text-brand-green transition group-hover:scale-[1.03]"
+                      aria-hidden="true"
+                    />
                     <div>
                       <h3 className="text-[15px] font-semibold text-ink-900">
                         {it.title}
@@ -95,4 +96,3 @@ export function Benefits() {
     </section>
   )
 }
-

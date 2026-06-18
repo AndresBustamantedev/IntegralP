@@ -40,8 +40,15 @@ export function useLenis() {
   }, [reducedMotion])
 
   const scrollTo = useCallback(
-    (target: string | HTMLElement, opts?: Parameters<Lenis['scrollTo']>[1]) => {
+    (
+      target: string | HTMLElement | number,
+      opts?: Parameters<Lenis['scrollTo']>[1],
+    ) => {
       if (reducedMotion) {
+        if (typeof target === 'number') {
+          window.scrollTo({ top: target, behavior: 'auto' })
+          return
+        }
         const el =
           typeof target === 'string' ? document.querySelector(target) : target
         el?.scrollIntoView({ behavior: 'smooth', block: 'start' })

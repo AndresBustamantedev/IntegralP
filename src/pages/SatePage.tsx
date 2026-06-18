@@ -2,6 +2,7 @@ import {
   BadgeCheck,
   Building2,
   Calculator,
+  ChevronRight,
   CircleHelp,
   Hammer,
   Leaf,
@@ -13,6 +14,7 @@ import {
   Wallet,
 } from 'lucide-react'
 import { useRef } from 'react'
+import { SectionBadge } from '../components/SectionBadge'
 import { SEO } from '../components/SEO'
 import { useGsapReveal } from '../hooks/useGsapReveal'
 import { Footer } from '../sections/Footer'
@@ -111,30 +113,13 @@ const faqs = [
 
 function LayerVisual() {
   return (
-    <div className="relative mx-auto h-[290px] w-full max-w-[420px]">
-      <div className="absolute bottom-0 left-6 h-8 w-[320px] rounded-[10px] bg-[#B5B7B0]" />
-      <div className="absolute bottom-8 left-10 h-[210px] w-16 rounded-l-md bg-[#8E6244] shadow-soft" />
-      <div className="absolute bottom-8 left-28 h-[215px] w-12 skew-y-[-8deg] rounded-sm bg-[#3C4147] shadow-soft" />
-      <div className="absolute bottom-8 left-40 h-[222px] w-16 skew-y-[-8deg] rounded-sm bg-[#F0F1EC] shadow-soft" />
-      <div className="absolute bottom-8 left-56 h-[218px] w-12 skew-y-[-8deg] rounded-sm bg-[#C9CBC4] shadow-soft" />
-      <div className="absolute bottom-8 left-68 h-[210px] w-16 skew-y-[-8deg] rounded-sm bg-[#7EA264] shadow-soft" />
-
-      {[
-        { n: '1', left: '56px', bottom: '102px' },
-        { n: '2', left: '122px', bottom: '92px' },
-        { n: '3', left: '176px', bottom: '102px' },
-        { n: '4', left: '232px', bottom: '92px' },
-        { n: '5', left: '286px', bottom: '102px' },
-      ].map((item) => (
-        <div
-          key={item.n}
-          className="absolute grid h-7 w-7 place-items-center rounded-full bg-brand-green text-[12px] font-semibold text-white ring-4 ring-white"
-          style={{ left: item.left, bottom: item.bottom }}
-        >
-          {item.n}
-        </div>
-      ))}
-    </div>
+    <img
+      src="/capasSATE.png"
+      alt="Capas del sistema SATE"
+      className="mx-auto w-full max-w-[420px] rounded-[22px]"
+      loading="lazy"
+      decoding="async"
+    />
   )
 }
 
@@ -192,13 +177,32 @@ export function SatePage() {
 
           <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:py-16">
             <div className="relative z-10">
-              <div
+              <nav
+                aria-label="Migas de pan"
                 data-sate-page-reveal
-                className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-4 py-2 text-[12px] font-semibold text-brand-dark shadow-soft ring-1 ring-black/5"
+                className="flex items-center gap-3 text-[12px] font-semibold text-ink-600"
               >
-                <span className="h-2 w-2 rounded-full bg-brand-green" />
-                Especialistas en SATE
-              </div>
+                <span className="h-[1px] w-8 bg-brand-green/55" />
+                <ol className="flex items-center gap-2">
+                  <li>
+                    <a href="/#inicio" className="hover:text-brand-green">
+                      Inicio
+                    </a>
+                  </li>
+                  <li aria-hidden="true">
+                    <ChevronRight className="h-4 w-4 text-ink-600/50" />
+                  </li>
+                  <li>
+                    <a href="/#servicios" className="hover:text-brand-green">
+                      Servicios
+                    </a>
+                  </li>
+                  <li aria-hidden="true">
+                    <ChevronRight className="h-4 w-4 text-ink-600/50" />
+                  </li>
+                  <li className="text-ink-900">SATE</li>
+                </ol>
+              </nav>
               <h1
                 data-sate-page-reveal
                 className="mt-5 max-w-xl font-display text-[42px] font-semibold leading-[1.05] tracking-tighter2 text-ink-900 sm:text-[58px]"
@@ -271,9 +275,9 @@ export function SatePage() {
             <div className="rounded-[28px] border border-black/5 bg-white p-6 shadow-soft sm:p-8">
               <div className="grid gap-8 lg:grid-cols-[0.85fr_1.05fr_0.95fr] lg:items-center">
                 <div data-sate-page-reveal>
-                  <div className="text-[12px] font-semibold uppercase tracking-wide text-brand-green">
+                  <SectionBadge>
                     ¿Qué es el sistema SATE?
-                  </div>
+                  </SectionBadge>
                   <h2 className="mt-3 font-display text-[30px] font-semibold tracking-tight text-ink-900">
                     Aislamiento térmico por el exterior
                   </h2>
@@ -295,17 +299,18 @@ export function SatePage() {
                     ['3', 'Aislamiento térmico', 'Placas de poliestireno expandido (EPS) o lana mineral.'],
                     ['4', 'Mortero base + malla', 'Capa de refuerzo con malla de fibra de vidrio.'],
                     ['5', 'Acabado final', 'Revestimiento decorativo y protector.'],
+                    ['6', 'Pintura (opcional)', 'Capa final para mejorar la estética y aportar durabilidad extra.'],
                   ].map(([n, title, text]) => (
                     <div
                       key={title}
                       data-sate-page-reveal
-                      className="flex gap-3 rounded-2xl bg-brand-light p-3"
+                      className="flex gap-4 rounded-2xl bg-white/90 p-4 ring-1 ring-black/5 shadow-[0_16px_34px_-28px_rgba(16,24,40,0.6)]"
                     >
-                      <div className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-green text-[12px] font-semibold text-white">
+                      <div className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-green text-[13px] font-semibold text-white shadow-[0_14px_28px_-16px_rgba(25,115,45,0.75)]">
                         {n}
                       </div>
                       <div>
-                        <div className="text-[13px] font-semibold text-ink-900">
+                        <div className="text-[14px] font-semibold text-ink-900">
                           {title}
                         </div>
                         <div className="mt-1 text-[13px] leading-relaxed text-ink-600">
@@ -346,9 +351,9 @@ export function SatePage() {
         <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div data-sate-page-reveal className="max-w-2xl">
-              <div className="text-[12px] font-semibold uppercase tracking-wide text-brand-green">
+              <SectionBadge>
                 Nuestro proceso
-              </div>
+              </SectionBadge>
               <h2 className="mt-3 font-display text-[30px] font-semibold tracking-tight text-ink-900">
                 Así trabajamos tu proyecto SATE
               </h2>
@@ -388,9 +393,9 @@ export function SatePage() {
           <div className="mx-auto max-w-6xl px-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div data-sate-page-reveal>
-                <div className="text-[12px] font-semibold uppercase tracking-wide text-brand-green">
+                <SectionBadge>
                   Proyectos SATE
-                </div>
+                </SectionBadge>
                 <h2 className="mt-3 font-display text-[30px] font-semibold tracking-tight text-ink-900">
                   Resultados que mejoran tu día a día
                 </h2>
@@ -470,9 +475,9 @@ export function SatePage() {
         <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div data-sate-page-reveal className="max-w-2xl">
-              <div className="text-[12px] font-semibold uppercase tracking-wide text-brand-green">
+              <SectionBadge>
                 Preguntas frecuentes
-              </div>
+              </SectionBadge>
               <h2 className="mt-3 font-display text-[30px] font-semibold tracking-tight text-ink-900">
                 Resolvemos tus dudas
               </h2>

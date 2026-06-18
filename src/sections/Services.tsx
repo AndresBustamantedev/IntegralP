@@ -35,7 +35,7 @@ export function Services({ onNavigate }: ServicesProps) {
       ref={(n) => {
         scopeRef.current = n
       }}
-      className="relative z-20 -mt-14 bg-transparent pb-14"
+      className="relative z-20 -mt-[86px] bg-transparent pb-14"
     >
       <div className="mx-auto max-w-6xl px-4">
         <div className="rounded-[28px] border border-black/5 bg-white/80 p-6 shadow-soft backdrop-blur sm:p-10">
@@ -83,10 +83,14 @@ export function Services({ onNavigate }: ServicesProps) {
                   Actuación rápida para minimizar daños, reparar espacios
                   afectados y recuperar tu propiedad.
                 </p>
-                <div className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-brand-green">
+                <button
+                  type="button"
+                  onClick={() => navigate('/servicios/inundaciones')}
+                  className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-brand-green"
+                >
                   Ver servicio
                   <span className="transition group-hover:translate-x-1">→</span>
-                </div>
+                </button>
               </div>
             </article>
 
@@ -116,7 +120,7 @@ export function Services({ onNavigate }: ServicesProps) {
                 </p>
                 <button
                   type="button"
-                  onClick={() => navigate('/servicios/sate')}
+                  onClick={() => navigate('/servicios/incendios')}
                   className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-brand-green"
                 >
                   Ver servicio
@@ -149,10 +153,14 @@ export function Services({ onNavigate }: ServicesProps) {
                   Sistemas de Aislamiento Térmico por el Exterior para mejorar
                   eficiencia energética, confort y ahorro.
                 </p>
-                <div className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-brand-green">
+                <button
+                  type="button"
+                  onClick={() => navigate('/servicios/sate')}
+                  className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-brand-green"
+                >
                   Ver servicio
                   <span className="transition group-hover:translate-x-1">→</span>
-                </div>
+                </button>
               </div>
             </article>
 
@@ -180,10 +188,14 @@ export function Services({ onNavigate }: ServicesProps) {
                   Construcción, reformas integrales y renovación de viviendas,
                   locales y edificios.
                 </p>
-                <div className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-brand-green">
+                <button
+                  type="button"
+                  onClick={() => navigate('/servicios/reformas')}
+                  className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-brand-green"
+                >
                   Ver servicio
                   <span className="transition group-hover:translate-x-1">→</span>
-                </div>
+                </button>
               </div>
             </article>
           </div>

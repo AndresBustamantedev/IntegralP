@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 import { useRef } from 'react'
+import { SectionBadge } from '../components/SectionBadge'
 import { useGsapReveal } from '../hooks/useGsapReveal'
 
 const projects = [
@@ -47,13 +48,9 @@ export function ProjectsGallery() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <div
-              data-project-reveal
-              className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-4 py-2 text-[12px] font-semibold text-brand-dark ring-1 ring-black/5"
-            >
-              <span className="h-2 w-2 rounded-full bg-brand-green" />
+            <SectionBadge data-project-reveal>
               Proyectos realizados
-            </div>
+            </SectionBadge>
             <h2
               data-project-reveal
               className="mt-5 font-display text-[28px] font-semibold tracking-tight text-ink-900 sm:text-[34px]"
@@ -104,4 +101,3 @@ export function ProjectsGallery() {
     </section>
   )
 }
-
